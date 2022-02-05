@@ -17,7 +17,6 @@ import org.web3j.protocol.core.methods.response.*;
 import org.web3j.protocol.http.HttpService;
 import org.web3j.tx.RawTransactionManager;
 import org.web3j.tx.TransactionManager;
-import requests.*;
 import org.web3j.utils.Convert;
 import org.web3j.utils.Convert.Unit;
 import org.web3j.utils.Numeric;
@@ -227,7 +226,7 @@ public class APILibrary {
         try {
             Web3ClientVersion clientVersion = web3j.web3ClientVersion().send();
             EthBlockNumber blockNumber = web3j.ethBlockNumber().send();
-            EthGasPrice gasPrice = "75";
+            EthGasPrice gasPrice = "75".send();
             System.out.println(Main.SFTInfo + Main.prop.getProperty("ClientVersion") + clientVersion.getWeb3ClientVersion());
             System.out.println(Main.SFTInfo + Main.prop.getProperty("CurrentBlock") + blockNumber.getBlockNumber());
             System.out.println(Main.SFTInfo + Main.prop.getProperty("DefaultGasPrice") + gasPrice.getGasPrice());
