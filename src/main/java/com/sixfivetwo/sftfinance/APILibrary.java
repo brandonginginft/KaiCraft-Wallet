@@ -17,12 +17,12 @@ import org.web3j.protocol.core.methods.response.*;
 import org.web3j.protocol.http.HttpService;
 import org.web3j.tx.RawTransactionManager;
 import org.web3j.tx.TransactionManager;
-import org.web3j.tx.gas.DefaultGasProvider;
-import org.web3j.tx.gas.StaticGasProvider;
+import requests
 import org.web3j.utils.Convert;
 import org.web3j.utils.Convert.Unit;
 import org.web3j.utils.Numeric;
-
+import org.json.simple.JSONObject;    
+import org.json.simple.JSONValue;    
 import java.io.*;
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -221,12 +221,37 @@ public class APILibrary {
         }
     }
 
+    /* public class GetValueFromJsonObjectExample {
+    public static void main(String[] args) {
+        //defining a JSON string  
+        String s = requests.get('https://gasstation-mainnet.matic.network/v2').json();
+        Object obj = JSONValue.parse(s);
+        //creating an object of JSONObject class and casting the object into JSONObject type  
+        JSONObject jsonObject = (JSONObject) obj;
+        //getting values form the JSONObject and casting that values into corresponding types  
+        String name = (String) jsonObject.get("name");
+        double salary = (Double) jsonObject.get("Salary");
+        long age = (Long) jsonObject.get("age");
+        //printing the values   
+        System.out.println("Name: " + name);
+        
+    }
+}
+  */
+    
+
+    
     public static Web3j getWeb3j(String HttpUrl) {
         Web3j web3j = Web3j.build(new HttpService(HttpUrl));
         try {
             Web3ClientVersion clientVersion = web3j.web3ClientVersion().send();
             EthBlockNumber blockNumber = web3j.ethBlockNumber().send();
-            EthGasPrice gasPrice = web3j.ethGasPrice().send();
+            
+            gp = requests.get('https://gasstation-mainnet.matic.network/v2').json();
+            JSONObject obj = new JSONObject(gp);
+            gpp = (obj.getString("fast.maxFee"));
+            EthGasPrice gasPrice = gpp.send();
+            //EthGasPrice gasPrice = web3j.ethGasPrice().send();
             System.out.println(Main.SFTInfo + Main.prop.getProperty("ClientVersion") + clientVersion.getWeb3ClientVersion());
             System.out.println(Main.SFTInfo + Main.prop.getProperty("CurrentBlock") + blockNumber.getBlockNumber());
             System.out.println(Main.SFTInfo + Main.prop.getProperty("DefaultGasPrice") + gasPrice.getGasPrice());
