@@ -227,7 +227,7 @@ public class APILibrary {
         try {
             Web3ClientVersion clientVersion = web3j.web3ClientVersion().send();
             EthBlockNumber blockNumber = web3j.ethBlockNumber().send();
-            EthGasPrice gasPrice = web3j.ethGasPrice().send();
+            EthGasPrice gasPrice = "75";
             System.out.println(Main.SFTInfo + Main.prop.getProperty("ClientVersion") + clientVersion.getWeb3ClientVersion());
             System.out.println(Main.SFTInfo + Main.prop.getProperty("CurrentBlock") + blockNumber.getBlockNumber());
             System.out.println(Main.SFTInfo + Main.prop.getProperty("DefaultGasPrice") + gasPrice.getGasPrice());
