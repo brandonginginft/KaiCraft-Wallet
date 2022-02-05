@@ -16,9 +16,8 @@ import java.util.Properties;
 
 
 public class Main extends JavaPlugin {
-    final static String SFTInfo = "§a[§6SFT§cFinance§a] §r";
-    final static String Thanks = "————————————————\nThank you for using SFTFinance,It is my first java project\nIf you want to support me,This is my ethereum address : 0x5b615F1a1989ee2636BfbFe471B1F66bCa16F926\nSupport link: https://github.com/Minecraft652/SFTFinance\nI would love to be your friend!Enjoy your use![Smile]\nDear ServerManager —— Minecraft_652n————————————————";
-    final static String ThanksZh = "————————————————\n感谢您使用 SFTFinance,这是我的第一个Java项目\n如果您想支持我一下,这是我的以太坊地址 : 0x5b615F1a1989ee2636BfbFe471B1F66bCa16F926 \n支持链接 : https://github.com/Minecraft652/SFTFinance\n我很乐意跟你交朋友！享受SFTFinance吧[微笑]\n亲爱的服务器管理员 —— Minecraft_652\n——————————————";
+    final static String SFTInfo = "[Kai Wallet]";
+    final static String Thanks = "Kai Wallet 1.4.1\nCredit To: https://github.com/Minecraft652/SFTFinance";
     public static Connection conn;
     public static Properties prop;
     public static BlockchainData chainlibrary;
@@ -160,7 +159,7 @@ public class Main extends JavaPlugin {
             Objects.requireNonNull(Bukkit.getPluginCommand("wallet")).setExecutor(new SFTCommand());
 
             if (Objects.requireNonNull(fileconfig.getString("Language")).contains("zh")) {
-                System.out.println(ThanksZh);
+                System.out.println(Thanks);
             } else {
                 System.out.println(Thanks);
             }
@@ -174,7 +173,7 @@ public class Main extends JavaPlugin {
 
     public void onDisable() {
         if (Objects.requireNonNull(fileconfig.getString("Language")).contains("zh")) {
-            System.out.println(ThanksZh);
+            System.out.println(Thanks);
         } else {
             System.out.println(Thanks);
         }

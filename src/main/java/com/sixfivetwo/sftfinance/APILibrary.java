@@ -21,9 +21,8 @@ import org.web3j.utils.Convert;
 import org.web3j.utils.Convert.Unit;
 import org.web3j.utils.Numeric;
 import org.web3j.tx.gas.DefaultGasProvider;
+import org.web3j.tx.gas.StaticGasProvider;
 import org.web3j.tx.gas.ContractGasProvider;
-import org.json.simple.JSONObject;    
-import org.json.simple.JSONValue;    
 import java.io.*;
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -213,7 +212,7 @@ public class APILibrary {
     public static String getVersion() {
         try {
             if (Objects.requireNonNull(Main.fileconfig.getString("Language")).contains("zh")) {
-                return Main.SFTInfo + "§a Release1.4, 作者保留所有权利";
+                return Main.SFTInfo + "Â§a Release1.4, ä½œè€…ä¿�ç•™æ‰€æœ‰æ�ƒåˆ©";
             } else {
                 return Main.SFTInfo + "Release1.4, Author all rights reserved";
             }
@@ -228,7 +227,7 @@ public class APILibrary {
         try {
             Web3ClientVersion clientVersion = web3j.web3ClientVersion().send();
             EthBlockNumber blockNumber = web3j.ethBlockNumber().send();
-            EthGasPrice gasPrice = web3j.ethGasPrice().send();
+            EthGasPrice gasPrice = web3j.ethGasPrice().send();;
             System.out.println(Main.SFTInfo + Main.prop.getProperty("ClientVersion") + clientVersion.getWeb3ClientVersion());
             System.out.println(Main.SFTInfo + Main.prop.getProperty("CurrentBlock") + blockNumber.getBlockNumber());
             System.out.println(Main.SFTInfo + Main.prop.getProperty("DefaultGasPrice") + gasPrice.getGasPrice());
