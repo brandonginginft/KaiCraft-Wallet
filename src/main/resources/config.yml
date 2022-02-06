@@ -1,11 +1,12 @@
-Version: Release1.1 #Version. 版本号
-Language: en_US.properties #LanguageFile,Support English and chinese,chinese is zh_CN.properties. 语言文件，支持英文和中文，中文填 zh_CN.properties
-HttpUrl: https://data-seed-prebsc-1-s1.binance.org:8545/ #blockchain httpurl. 区块链的HTTP和端口连接
-Symbol: BNB #NaiveToken Symbol. 原链代币的标志
-ChainName: "Binance Smart Chain Testnet" #chainname 链名
-ChainID: 97 #blockchain id 链id.
-OnPlayerLoginRegisterWallet: true #whether to create a wallet when the player logs in, true = yes. 是否在玩家登录时创建钱包，true为是
-IsMysql: false #whether to use mysql database. 是否使用Mysql数据库.
-MysqlUrl: mysql://localhost:3306/SFTFinance #Mysql Url. Mysql 链接地址.
-MysqlUser: root #Mysql user. Mysql 用户
-MysqlPassword: 1234 #Mysql password. Mysql 用户密码
+Version: Release1.1 #Version.�
+Language: en_US.properties #LanguageFile,Support English and chinese,chinese is zh_CN.properties. 
+HttpUrl: https://speedy-nodes-nyc.moralis.io/9b440aeffb73e2e2865ff0a6/polygon/mainnet/ #blockchain httpurl
+Symbol: MATIC #NaiveToken Symbol.
+ChainName: "Polygon Mainnet" #chainname 
+ChainID: 137 #blockchain id
+OnPlayerLoginRegisterWallet: true #whether to create a wallet when the player logs in, true = yes.
+# playerCanInsertTheyOwnSeed: true #Whether to enable players to enter their own wallets, true = yes. WARNING! This feature will happen in the future, don't enable this!
+IsMysql: false #whether to use mysql database. 
+MysqlUrl: mysql://localhost:3306/SFTFinance #Mysql Url. Mysql 
+MysqlUser: root #Mysql user. 
+MysqlPassword: 1234 #Mysql password.
